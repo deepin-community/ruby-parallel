@@ -1,0 +1,18 @@
+From: =?utf-8?q?C=C3=A9dric_Boutillier?= <boutil@debian.org>
+Date: Sun, 20 Nov 2016 11:35:24 +0100
+Subject: disable bundler in tests
+
+---
+ spec/cases/helper.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Index: ruby-parallel/spec/cases/helper.rb
+===================================================================
+--- ruby-parallel.orig/spec/cases/helper.rb
++++ ruby-parallel/spec/cases/helper.rb
+@@ -1,5 +1,4 @@
+ # frozen_string_literal: true
+-require 'bundler/setup'
+ require 'parallel'
+ 
+ def process_diff

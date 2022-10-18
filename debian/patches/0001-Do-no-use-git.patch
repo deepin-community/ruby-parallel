@@ -1,0 +1,21 @@
+From: Hideki Yamane <henrich@debian.org>
+Date: Wed, 1 Sep 2021 22:15:53 +0900
+Subject: Do no use git
+
+---
+ parallel.gemspec | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Index: ruby-parallel/parallel.gemspec
+===================================================================
+--- ruby-parallel.orig/parallel.gemspec
++++ ruby-parallel/parallel.gemspec
+@@ -14,7 +14,7 @@ Gem::Specification.new name, Parallel::V
+     "source_code_uri" => "https://github.com/grosser/#{name}/tree/v#{s.version}",
+     "wiki_uri" => "https://github.com/grosser/#{name}/wiki"
+   }
+-  s.files = `git ls-files lib MIT-LICENSE.txt`.split("\n")
++  s.files = Dir["lib/**/*"] + ["MIT-LICENSE.txt"]
+   s.license = "MIT"
+   s.required_ruby_version = '>= 2.5'
+ end

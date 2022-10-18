@@ -1,0 +1,31 @@
+From: =?utf-8?q?C=C3=A9dric_Boutillier?= <boutil@debian.org>
+Date: Wed, 1 Aug 2018 00:58:03 +0200
+Subject: increase time limit for tests
+
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=902520
+---
+ spec/parallel_spec.rb | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/spec/parallel_spec.rb b/spec/parallel_spec.rb
+index eed3d12..285af06 100644
+--- a/spec/parallel_spec.rb
++++ b/spec/parallel_spec.rb
+@@ -221,7 +221,7 @@ describe Parallel do
+     it "saves time" do
+       time_taken{
+       `ruby spec/cases/parallel_map_sleeping.rb`
+-      }.should <= 3.5
++      }.should <= 4.5
+     end
+ 
+     it "executes with given parameters" do
+@@ -235,7 +235,7 @@ describe Parallel do
+     it "starts new process imediatly when old exists" do
+       time_taken{
+       `ruby spec/cases/parallel_map_uneven.rb`
+-      }.should <= 3.5
++      }.should <= 4.5
+     end
+ 
+     it "does not flatten results" do

@@ -1,0 +1,33 @@
+Source: ruby-parallel
+Section: ruby
+Priority: optional
+Maintainer: Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+Uploaders: Cédric Boutillier <boutil@debian.org>
+Build-Depends: debhelper-compat (= 13),
+               gem2deb,
+               procps,
+               ruby-activerecord (>= 2:6.0), ruby-activerecord (<< 2:7.0),
+               ruby-progressbar,
+               ruby-rspec,
+               ruby-sqlite3,
+               lsof,
+Standards-Version: 4.6.0
+Vcs-Git: https://salsa.debian.org/ruby-team/ruby-parallel.git
+Vcs-Browser: https://salsa.debian.org/ruby-team/ruby-parallel
+Homepage: https://github.com/grosser/parallel
+Testsuite: autopkgtest-pkg-ruby
+XS-Ruby-Versions: all
+Rules-Requires-Root: no
+
+Package: ruby-parallel
+Architecture: all
+XB-Ruby-Versions: ${ruby:Versions}
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         ruby-progressbar,
+Description: library to run any kind of code in parallel processes
+ This package provides a Ruby library to run any code in parallel Processes (in
+ order to use all CPUs) or Threads (to speedup blocking operations).
+ .
+ This is best suited for map-reduce operations or e.g. parallel
+ downloads or uploads.
