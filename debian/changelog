@@ -1,15 +1,31 @@
-ruby-parallel (1.21.0-2) UNRELEASED; urgency=medium
+ruby-parallel (1.22.1-2) unstable; urgency=medium
 
-  * update
+  * Team upload.
+  * Disable running upstream test suite (Closes: #905648, #1019646, #1017218)
 
- -- Debian Ruby Team <pkg-ruby-extras-maintainers@lists.alioth.debian.org>  Thu, 21 Jul 2022 17:22:21 +0800
+ -- Antonio Terceiro <terceiro@debian.org>  Fri, 24 Feb 2023 09:12:24 -0300
 
-ruby-parallel (1.21.0-2) unstable; urgency=medium
+ruby-parallel (1.22.1-1) unstable; urgency=medium
 
-  * skip 2 test.
-  * update version.
+  * Team upload.
 
- -- wangxiangyu <wangxiangyu@uniontech.com>  Thu, 21 Jul 2022 17:21:30 +0900
+  [ Daniel Leidert ]
+  * Team upload.
+  * d/docs: Install README.md.
+  * d/watch: Update watch file.
+  * d/patches/0003-Use-correct-Ruby-version-for-tests.patch: Add patch.
+    - Make sure to run test cases with the target Ruby version.
+  * d/patches/0004-Skip-flaky-test.patch: Add patch.
+    - Skip a test which randomly fails for upstream as well (closes: #996346).
+  * d/patches/series: Enable new patch.
+  * d/upstream/metadata: Remove Changelog and update Bug-Submit.
+
+  [ Lucas Kanashiro ]
+  * New upstream release.
+  * Remove patches applied by upstream
+  * Declare compliance with Debian Policy 4.6.1
+
+ -- Lucas Kanashiro <kanashiro@debian.org>  Mon, 23 May 2022 17:30:18 -0300
 
 ruby-parallel (1.21.0-1) unstable; urgency=medium
 

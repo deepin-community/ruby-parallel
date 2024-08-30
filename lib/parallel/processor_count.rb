@@ -1,11 +1,10 @@
 # frozen_string_literal: true
-require 'etc'
-
 module Parallel
   # TODO: inline this method into parallel.rb and kill physical_processor_count in next major release
   module ProcessorCount
     # Number of processors seen by the OS, used for process scheduling
     def processor_count
+      require 'etc'
       @processor_count ||= Integer(ENV['PARALLEL_PROCESSOR_COUNT'] || Etc.nprocessors)
     end
 
@@ -19,7 +18,7 @@ module Parallel
           when /linux/
             cores = {} # unique physical ID / core ID combinations
             phy = 0
-            IO.read("/proc/cpuinfo").scan(/^physical id.*|^core id.*/) do |ln|
+            File.read("/proc/cpuinfo").scan(/^physical id.*|^core id.*/) do |ln|
               if ln.start_with?("physical")
                 phy = ln[/\d+/]
               elsif ln.start_with?("core")
